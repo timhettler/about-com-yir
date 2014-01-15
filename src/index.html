@@ -12,7 +12,8 @@
     <meta property="og:image" content=""/>
     <meta property="og:site_name" content="<%= name %>" />
     <!-- /build -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- compile:style app -->
     <!-- build:style app --><!-- /build -->
     <!-- /compile -->
@@ -20,11 +21,16 @@
     <!-- build:script modernizr --><!-- /build -->
     <!-- /compile -->
 </head>
-<body>
+<body class="impress-not-supported">
+    <div id="impress">
+        <!-- build:section templates -->
+        <!-- /build -->
+    </div>
     <!-- compile:script app -->
     <!-- build:script jquery --><!-- /build -->
     <!-- build:script components --><!-- /build -->
     <!-- build:script app --><!-- /build -->
     <!-- /compile -->
+    <script>impress().init();</script>
 </body>
 </html>

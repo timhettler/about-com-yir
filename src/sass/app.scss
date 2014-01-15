@@ -1,0 +1,9 @@
+@import "_global-vars";
+@import "_reset.scss";
+@import "compass";
+
+@import "_steps.scss";
+
+img {
+    max-width: 100%;
+}

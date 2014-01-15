@@ -39,6 +39,9 @@ module.exports = function ( grunt ) {
           styles: {
             app: '<%= build_dir %>/css/app.css'
           },
+          sections: {
+            templates: '<%= app_files.atpl %>'
+          },
           data: {
               version: "<%= pkg.version %>",
               title: "<%= pkg.name %>",
@@ -146,6 +149,13 @@ module.exports = function ( grunt ) {
         tasks: [ 'htmlbuild:build' ]
       },
 
+      tpls: {
+        files: [
+          '<%= app_files.atpl %>'
+        ],
+        tasks: [ 'htmlbuild:build' ]
+      },
+
       compass: {
         files: [ 'src/sass/**/*.scss' ],
         tasks: [ 'compass:dev' ]
@@ -169,10 +179,13 @@ module.exports = function ( grunt ) {
       dev: {
         options: {
           force: true,
+          sassDir: 'src/sass',
           cssDir: '<%= build_dir %>/css',
           imagesDir: '<%= build_dir %>/assets',
           fontsDir: '<%= build_dir %>/assets/fonts',
-          environment: 'development'
+          extensionsDir: 'compass_extensions',
+          environment: 'development',
+          raw: 'sass_options = {:debug_info => true}\n'
         }
       },
       prod: {

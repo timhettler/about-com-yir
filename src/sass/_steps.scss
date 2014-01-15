@@ -1,0 +1,12 @@
+.step {
+    position: relative;
+    width: $slide__width;
+    height: $slide__height;
+    margin: 20px auto;
+    @include box-sizing(border-box);
+
+    .impress-enabled & {
+        margin: 0;
+    }
+    background: red;
+}
