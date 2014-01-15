@@ -2,8 +2,10 @@
 @import "_reset.scss";
 @import "compass";
 
+@import "_structure.scss";
 @import "_steps.scss";
 
 img {
+    display: block;
     max-width: 100%;
 }

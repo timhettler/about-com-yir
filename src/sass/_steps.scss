@@ -1,12 +1,19 @@
 .step {
+    @include clearfix();
+    @include box-sizing(border-box);
     position: relative;
     width: $slide__width;
     height: $slide__height;
     margin: 20px auto;
-    @include box-sizing(border-box);
 
     .impress-enabled & {
         margin: 0;
     }
-    background: red;
+    //background: rgba(#000, 0.1); //FPO - remove later
 }
+
+.step__container {
+    margin: 0 auto;
+}
+
+@import "_step--1.scss";
