@@ -1,0 +1,20 @@
+.step--5 {
+  .section--1 {
+    max-height: 535px;
+    overflow-y: auto;
+  }
+  .step__footer {
+    padding-top: 20px; 
+    position: relative;
+
+    &:before {
+      @include background-image(linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.0)));
+      bottom: 100%;
+      content: '';
+      height: 5px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}

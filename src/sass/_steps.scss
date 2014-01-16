@@ -1,5 +1,4 @@
 .step {
-    @include clearfix();
     @include box-sizing(border-box);
     position: relative;
     width: $slide__width;
@@ -13,8 +12,15 @@
 }
 
 .step__container {
+    @include clearfix();
     margin: 0 auto;
 }
 
 @import "_step--2.scss";
 @import "_step--3.scss";
+@import "_step--4.scss";
+@import "_step--5.scss";
+@import "_step--6.scss";
+@import "_step--7.scss";
+
+@import "_step--12.scss";

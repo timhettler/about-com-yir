@@ -9,6 +9,11 @@
   width: 25%;
 }
 
+.width-30p {
+    @extend %grid-cell;
+    width: 30%;
+}
+
 .width-40p {
   @extend %grid-cell;
   width: 40%;
@@ -22,6 +27,11 @@
 .width-60p {
   @extend %grid-cell;
   width: 60%;
+}
+
+.width-70p {
+    @extend %grid-cell;
+    width: 70%;
 }
 
 .width-75p {

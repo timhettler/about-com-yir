@@ -5,6 +5,18 @@
 
   var canvas, canvasTopicAreas, stage, exportRoot;
   function initCreateJS() {
+    // Intro
+    canvas = document.getElementById("intro");
+    exportRoot = new libIntro.YIR_intro();
+
+    stage = new createjs.Stage(canvas);
+    stage.addChild(exportRoot);
+    stage.update();
+    stage.enableMouseOver();
+
+    createjs.Ticker.setFPS(24);
+    createjs.Ticker.addEventListener("tick", stage);
+
     // Rocket
     canvas = document.getElementById("rocket-animation");
     exportRoot = new lib.slide1_animation();
