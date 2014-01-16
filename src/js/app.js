@@ -16,8 +16,8 @@
     createjs.Ticker.setFPS(24);
     createjs.Ticker.addEventListener("tick", stage);
 
-    // canvas MediaPost
-    canvas = document.getElementById("canvasMediaPost");
+    //Content
+    canvas = document.getElementById("content-animation");
     exportRoot = new lib1.slide2_animation();
     stage = new createjs.Stage(canvas);
     stage.addChild(exportRoot);

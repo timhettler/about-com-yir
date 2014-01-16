@@ -9,9 +9,19 @@
   width: 25%;
 }
 
+.width-40p {
+  @extend %grid-cell;
+  width: 40%;
+}
+
 .width-50p {
   @extend %grid-cell;
   width: 50%;
+}
+
+.width-60p {
+  @extend %grid-cell;
+  width: 60%;
 }
 
 .width-75p {

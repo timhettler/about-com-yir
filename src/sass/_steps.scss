@@ -9,16 +9,12 @@
     .impress-enabled & {
         margin: 0;
     }
-    background: rgba(#000, 0.1); //FPO - remove later
+    //background: rgba(#000, 0.1); //FPO - remove later
 }
 
 .step__container {
     margin: 0 auto;
 }
 
-.step--0,
-.step--1 {
-    background: none;
-}
-
-@import "_step--1.scss";
+@import "_step--2.scss";
+@import "_step--3.scss";
