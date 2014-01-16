@@ -1,0 +1,20 @@
+%grid-cell {
+  @include box-sizing(border-box);
+  float: left;
+  position: relative;
+}
+
+.width-25p {
+  @extend %grid-cell;
+  width: 25%;
+}
+
+.width-50p {
+  @extend %grid-cell;
+  width: 50%;
+}
+
+.width-75p {
+  @extend %grid-cell;
+  width: 75%;
+}

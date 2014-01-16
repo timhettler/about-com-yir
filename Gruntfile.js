@@ -337,7 +337,7 @@ module.exports = function ( grunt ) {
 
   grunt.registerTask('compile', [
     'copy:compile_assets', 'copy:compile_data',
-    'ngmin', 'concat', 'imageoptim',
+    'concat', 'imageoptim',
     'compass:prod', 'modernizr', 'htmlbuild:compile'
   ]);
 };

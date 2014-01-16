@@ -1,0 +1,97 @@
+.step--1 {
+    .step__container {
+        width: 950px;
+    }
+    .step__header {
+        border-bottom: 2px solid #1b1b1b;
+        margin-bottom: 42px;
+        padding-bottom: 20px;
+    }
+    .hero,
+    .little-dudes {
+        margin: 31px 0;
+    }
+    .little-dudes--top {
+        margin-top: -10px;
+    }
+    .section-1 {
+        border-right: 2px solid #1b1b1b;
+        padding-right: 28px;
+    }
+    .section-2 {
+        padding-left: 40px;
+    }
+    .tout {
+        margin-top: 50px;
+    }
+}
+
+// Ship animation
+@-webkit-keyframes ship {
+    0% {
+        -webkit-transform: translate(-150px,100px);
+    }
+
+    13% {
+        -webkit-transform: translate(0,0);
+    }
+
+    25% {
+        -webkit-transform: translate(0,-10px);
+    }
+
+    38% {
+        -webkit-transform: translate(0,0);
+    }
+
+    50% {
+        -webkit-transform: translate(0,-10px);
+    }
+
+    63% {
+        -webkit-transform: translate(0,0);
+    }
+
+    75% {
+        -webkit-transform: translate(0,-10px);
+    }
+
+    88% {
+        -webkit-transform: translate(0,0);
+    }
+
+    100% {
+        -webkit-transform: translate(150px,-100px);
+    }
+}
+
+
+.ship-animation {
+    position: relative;
+    overflow: hidden;
+}
+
+.ship-animation__background {
+    background-image: url('../assets/slide1_05.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 82px;
+    width: 683px;
+}
+
+.ship-animation__ship {
+    -webkit-animation: ship 8s infinite;
+    -webkit-animation-play-state: paused;
+    background-image: url('../assets/slide1_04.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 37px;
+    position: absolute;
+    width: 69px;
+    top: 26px;
+    left: 38px;
+
+    .impress-on-big-numbers & {
+        -webkit-animation-play-state: running;
+    }
+}
