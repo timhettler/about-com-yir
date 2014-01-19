@@ -1,0 +1,19 @@
+.step--9 {
+  .tout {
+    margin: 21px 0;
+  }
+  .thumbs {
+    text-align: justify;
+
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+    .thumb {
+      display: inline-block;
+      width: 16%;
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,8 +1,65 @@
+@include keyframes(flicker) {
+    0% {
+        opacity: 1;
+    }
+    2% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 1;
+    }
+    6% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    22% {
+        opacity: 1;
+    }
+    24% {
+        opacity: 0;
+    }
+    26% {
+        opacity: 1;
+    }
+    28% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .step--6 {
     .step__header {
         margin-bottom: 31px;
     }
     .section--1 {
         padding-right: 31px;
+    }
+    .bulb__top {
+        position: relative;
+    }
+    .bulb__light--2 {
+        @include animation(flicker 10s infinite);
+        @include animation-delay(500ms);
+        @include animation-play-state(paused);
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        .impress-on-tools-and-tech &,
+        .impress-on-overview & {
+            @include animation-play-state(running);
+        }
+    }
+    .bulb__bottom {
+        margin: 0 auto;
+        width: 200px;
     }
 }

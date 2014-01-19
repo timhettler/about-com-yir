@@ -1,0 +1,33 @@
+.step--8 {
+  .section--main {
+    text-align: justify;
+
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+    .section {
+      @include transition-duration(400ms);
+      @include transition-property(all);
+      display: inline-block;
+      width: 23%;
+      margin-bottom: 20px;
+      opacity: 0;
+
+      .impress-on-great-new-additions &,
+      .impress-on-overview & {
+        opacity: 1;
+      }
+    }
+    @for $i from 1 through 8 {
+      .section--#{$i} {
+        $delay: 300 + (200 * $i) + 'ms';
+        @include transition-delay(unquote($delay));
+      }
+    }
+  }
+  .section--aside {
+      padding-left: 30px;
+  }
+}

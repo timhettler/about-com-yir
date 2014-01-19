@@ -1,0 +1,22 @@
+.step--10 {
+  .step__container {
+    background-image: url('../assets/slide7_bg.jpg');
+    padding: 25px;
+  }
+  .step__header {
+    margin-bottom: 20px;
+  }
+  .step__main {
+    text-align: justify;
+
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+    .section {
+      display: inline-block;
+      width: 32%;
+    }
+  }
+}
