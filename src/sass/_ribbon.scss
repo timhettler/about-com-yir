@@ -1,22 +1,24 @@
-$ribbon-gradient: linear-gradient(to bottom, #8b0f12, rgba(#8b0f12, 0) 25%);
+@mixin ribbon__gradient($dir: top) {
+  @include background-image(linear-gradient(unquote($dir), #8b0f12, rgba(#8b0f12, 0) 25%));
+}
 
 @mixin ribbon__piece($x,$y) {
   @include transform(translate(-50%, -50%) translate3d($x, $y, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1));
 }
 
-@mixin ribbon__corner() {
-  &:after {
-    left: 100%;
+@mixin ribbon__corner($pos:right, $dir:bottom, $pseudo: after) {
+  &:#{$pseudo} {
+    #{opposite-position($pos)}: 100%;
     border: solid transparent;
     content: " ";
     height: 0;
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-bottom-color: #d2232a;
+    #{'border-'+$dir+'-color'}: #d2232a;
     border-width: 52px;
-    margin-left: -52px;
-    top: -52px;
+    margin-#{opposite-position($pos)}: -52px;
+    #{opposite-position($dir)}: -52px;
   }
 }
 
@@ -35,7 +37,7 @@ $ribbon-gradient: linear-gradient(to bottom, #8b0f12, rgba(#8b0f12, 0) 25%);
 }
 
 .ribbon--2 {
-  @include background-image($ribbon-gradient);
+  @include ribbon__gradient();
   @include ribbon__piece(-2581px,-1693px);
   height: 1024px;
   width: 52px;
@@ -47,9 +49,49 @@ $ribbon-gradient: linear-gradient(to bottom, #8b0f12, rgba(#8b0f12, 0) 25%);
   height: 52px;
   width: 1632px;
 }
+
 .ribbon--3 {
-  @include background-image($ribbon-gradient);
-  @include ribbon__piece(-897px,-390px);
-  height: 1582px;
+  @include ribbon__gradient();
+  @include ribbon__piece(-897px,-349px);
+  height: 1664px;
   width: 52px;
+}
+
+.ribbon--4 {
+  @include ribbon__gradient(right);
+  @include ribbon__piece(-220px, 457px);
+  height: 52px;
+  width: 1303px;
+}
+
+.ribbon--4a {
+  @include ribbon__gradient();
+  @include ribbon__piece(457px, 20px);
+  @include ribbon__corner(bottom, left);
+  height: 823px;
+  width: 52px;
+}
+
+.ribbon--4b {
+  @include ribbon__piece(288px, -417px);
+  @include ribbon__corner();
+  @include ribbon__corner(left, top, before);
+  height: 52px;
+  width: 285px;
+}
+
+.ribbon--5 {
+  @include ribbon__gradient(bottom);
+  @include ribbon__piece(120px, -1068px);
+  @include ribbon__corner(top, right);
+  height: 1251px;
+  width: 52px;
+}
+
+.ribbon--6 {
+  @include ribbon__gradient(left);
+  @include ribbon__corner();
+  @include ribbon__piece(921px, -1719px);
+  height: 52px;
+  width: 1550px;
 }
