@@ -1,0 +1,55 @@
+$ribbon-gradient: linear-gradient(to bottom, #8b0f12, rgba(#8b0f12, 0) 25%);
+
+@mixin ribbon__piece($x,$y) {
+  @include transform(translate(-50%, -50%) translate3d($x, $y, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1));
+}
+
+@mixin ribbon__corner() {
+  &:after {
+    left: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #d2232a;
+    border-width: 52px;
+    margin-left: -52px;
+    top: -52px;
+  }
+}
+
+.ribbon {
+  @include transform-style(preserve-3d);
+  position: absolute;
+  background-color: #d2232a;
+  z-index: 99;
+}
+
+.ribbon--1 {
+  @include ribbon__piece(-2633px,-2231px);
+  @include ribbon__corner();
+  height: 52px;
+  width: 52px;
+}
+
+.ribbon--2 {
+  @include background-image($ribbon-gradient);
+  @include ribbon__piece(-2581px,-1693px);
+  height: 1024px;
+  width: 52px;
+}
+
+.ribbon--2a {
+  @include ribbon__piece(-1739px,-1207px);
+  @include ribbon__corner();
+  height: 52px;
+  width: 1632px;
+}
+.ribbon--3 {
+  @include background-image($ribbon-gradient);
+  @include ribbon__piece(-897px,-390px);
+  height: 1582px;
+  width: 52px;
+}
